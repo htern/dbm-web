@@ -11,6 +11,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -c .storybook -s public"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.4.2",
+    "@storybook/addon-links": "^3.4.2",
+    "@storybook/addon-storyshots": "^3.4.2",
+    "@storybook/react": "^3.4.2",
+    "babel-core": "^6.26.0"
   }
 }
