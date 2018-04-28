@@ -14,7 +14,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 9009 -c .storybook -s public"
+    "pretest:cypress": "yarn storybook:build",
+    "test:cypress": "npm-run-all --parallel --race storybook:serve cypress:run",
+    "test:cypress:dev": "npm-run-all --parallel --race storybook cypress:open",
+    "storybook": "start-storybook -p 9009 -c .storybook -s public",
+    "storybook:build": "build-storybook -s public",
+    "storybook:serve": "serve ./storybook-static -p 9009",
+    "cypress:run": "cypress run",
+    "cypress:open": "cypress open"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.2",
@@ -24,6 +31,7 @@
     "@storybook/react": "^3.4.2",
     "babel-core": "^6.26.0",
     "babel-runtime": "^6.26.0",
+    "cypress": "^2.1.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
@@ -32,6 +40,8 @@
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.7.0",
     "jest": "^22.4.3",
-    "prettier": "^1.12.1"
+    "npm-run-all": "^4.1.2",
+    "prettier": "^1.12.1",
+    "serve": "^6.5.6"
   }
 }
